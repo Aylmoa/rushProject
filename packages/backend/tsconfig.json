@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "ESNext",
+    "target": "ESNext",
+    "sourceMap": false,   
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "src",
+    "declaration": true  },
+  "include": ["./src"],
+  "exclude": ["node_modules"]
+}
