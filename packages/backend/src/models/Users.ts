@@ -10,6 +10,7 @@ export interface UserType{
     profilePicture:string;
     birthDate:Date;
     deleted:boolean;
+    _id?: string;
 }
 
 export const userSchema= new Schema({
@@ -22,5 +23,6 @@ export const userSchema= new Schema({
     profilePicture:{type:String, required:true},
     birthDate:{type:Date, required:true},
     deleted:{type: Boolean,required:true},
+    
 })
 export const User = model<UserType>("User", userSchema)

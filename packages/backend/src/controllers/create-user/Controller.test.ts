@@ -2,7 +2,7 @@ import {afterAll, beforeAll, describe,expect,test}from "vitest";
 import mongoose from "mongoose";
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import {getMockReq,getMockRes}from "@jest-mock/express";
-import {createUser} from "./Controller";
+import {ControllerCreateUser} from "./Controller";
 
 describe("CreateUser Tests", async ()=>{
     
@@ -31,7 +31,7 @@ describe("CreateUser Tests", async ()=>{
                 profilePicture: "pictureurl.com",}
         })
 
-         createUser(req,res)
+        ControllerCreateUser(req,res)
        expect(res.json).toHaveBeenLastCalledWith(
            expect.objectContaining({
                id:12

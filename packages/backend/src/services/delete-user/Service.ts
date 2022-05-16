@@ -1,15 +1,15 @@
 import { UserType, User } from "../../models/Users";
 
 export interface DeleteUserProps {
-  body: any;
+  body: UserType;
   
 }
-export async function deleteUser(props:DeleteUserProps){
-const {body}=props;
+export async function DeleteUser(props:DeleteUserProps){
+const {_id}=props.body;
 
 const deleteUser = await User.findByIdAndUpdate(
     {
-      _id: body._id,
+      _id: _id,
     },
     { $set: { deleted: true } },
     { returnOriginal: false }

@@ -4,7 +4,7 @@ export interface CreateUserProps {
   body: UserType;
 }
 
-export async function createUser(props: CreateUserProps) {
+export async function CreateUser(props: CreateUserProps) {
   const {
     age,
     birthDate,

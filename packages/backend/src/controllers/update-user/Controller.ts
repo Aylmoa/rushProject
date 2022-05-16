@@ -2,9 +2,10 @@ import { User } from "../../models/Users";
 import { Response, Request } from "express";
 import { ErrorHandler } from "../../utilities/ErrorHandler";
 import { updateUser } from "../../services/update-user/Service";
-export async function UpdateUser(req: Request, res: Response) {
+
+export async function ControllerUpdateUser(req: Request, res: Response) {
   try {
-   const result = updateUser({body:req.body})
+   const result =await updateUser({body:req.body})
 
     return res.send(result);
   } catch (e) {

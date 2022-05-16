@@ -2,11 +2,11 @@ import express from "express";
 import mongoose from "mongoose";
 import cors  from "cors";
 import bodyParser from "body-parser";
-import {CreateUser} from "./controllers/create-user/Controller"
-import {GetAllUsers} from "./controllers/get-all-users/Controller"
-import {UpdateUser} from "./controllers/update-user/Controller"
-import {DeleteUser} from "./controllers/delete-user/Controller"
-import {GetUserById} from "./controllers/get-user-by-id/Controller"
+import {ControllerCreateUser} from "./controllers/create-user/Controller"
+import {ControllerGetAllUsers} from "./controllers/get-all-users/Controller"
+import {ControllerUpdateUser} from "./controllers/update-user/Controller"
+import {ControllerDeleteUser} from "./controllers/delete-user/Controller"
+import {ControllerGetUserById} from "./controllers/get-user-by-id/Controller"
 
 //
 //---------------------------Default Settings---------------------
@@ -43,14 +43,14 @@ function checkToken(req, res, next) {
 //
 //---------------------------End Points---------------------
 //
-app.get("/get-all-users", checkToken, GetAllUsers)
+app.get("/get-all-users", checkToken, ControllerGetAllUsers)
 /* app.get("/get-all-users", checkToken, async (req, res) => {
   const collection = await db.collection("documents");
   const result = await collection.find({}).toArray();
 
   res.send(result);
 }); */
-app.post("/create-user", checkToken, CreateUser)
+app.post("/create-user", checkToken, ControllerCreateUser)
 /* app.post("/create-user", checkToken, async (req, res) => {
   const collection = await db.collection("documents");
   const newUser = await collection.insertOne(req.body);
@@ -59,7 +59,7 @@ app.post("/create-user", checkToken, CreateUser)
   });
   res.send(createdUser);
 }); */
-app.put("/update-user", checkToken, UpdateUser) 
+app.put("/update-user", checkToken, ControllerUpdateUser) 
 // app.put("/update-user", checkToken, async (req, res) => {
 //   const collection = await db.collection("documents");
 
@@ -72,7 +72,7 @@ app.put("/update-user", checkToken, UpdateUser)
 
 //   res.send(updateUser.value);
 // });
-app.delete("/delete-user", checkToken,DeleteUser )
+app.delete("/delete-user", checkToken,ControllerDeleteUser )
 // app.delete("/delete-user", checkToken, async (req, res) => {
 //   const collection = await db.collection("documents");
 //   const deleteUser = await collection.deleteOne({
@@ -81,7 +81,7 @@ app.delete("/delete-user", checkToken,DeleteUser )
 //   console.log("Deleted document =>", deleteUser);
 //   res.send(deleteUser);
 // });
-app.post("/get-user-by-id",checkToken, GetUserById)
+app.post("/get-user-by-id",checkToken, ControllerGetUserById)
 /* app.post("/get-user-by-id", async (req, res) => {
   const collection = await db.collection("documents");
   const singleUser = await collection.findOne({ _id: ObjectId(req.body._id) });

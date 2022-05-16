@@ -1,11 +1,11 @@
 import { User } from "../../models/Users";
 import { ErrorHandler } from "../../utilities/ErrorHandler";
 import { Response, Request } from "express";
-import { createUser } from "../../services/create-user/Service";
+import { CreateUser } from "../../services/create-user/Service";
 
-export async function CreateUser(req: Request, res: Response) {
+export async function ControllerCreateUser(req: Request, res: Response) {
   try {
-   const result=createUser({body:req.body});
+   const result=await CreateUser({body:req.body});
 
     return res.send(result);
   } catch (e) {
