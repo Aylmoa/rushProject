@@ -56,17 +56,17 @@ const HomeCardContainer = styled.div((props:propsWithcustomTheme) => ({
  
 
  export interface HomeCardProps{
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
+  username:string;  
+  _id: number;
+  age: number;
+  deleted: boolean;
 }
 
 export const HomeCard = (props:HomeCardProps) => {
   return <HomeCardContainer >
-          <HomeCardContainerItemID>Movie: {props.id}</HomeCardContainerItemID>  
-          <HomeCardContainerItemDescription>Title: {props.title}</HomeCardContainerItemDescription>
-          <HomeCardContainerDivider>User: {props.userId}<HomeCardContainerItemFinished isFinished={props.completed}>{props.completed ? "Finished":"Not Finished"}</HomeCardContainerItemFinished>
+          <HomeCardContainerItemID>Id: {props._id}</HomeCardContainerItemID>  
+          <HomeCardContainerItemDescription>Name: {props.username}</HomeCardContainerItemDescription>
+          <HomeCardContainerDivider>Age: {props.age}<HomeCardContainerItemFinished isFinished={props.deleted}>{props.deleted ? "Delted":"Not Deleted"}</HomeCardContainerItemFinished>
             </HomeCardContainerDivider>
           
       

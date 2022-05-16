@@ -7,7 +7,7 @@ export const HomeCards=()=>{
     const [cards,setCards]=useState<HomeCardProps[]>([]);
 
   const homeCardsData= useCallback(async()=>{
-    const data=await fetch("http://localhost:4000",{
+    const data=await fetch("http://localhost:4000/get-all-users",{
       mode:"cors"
     });
     const parsedData=await data.json();
@@ -23,7 +23,7 @@ export const HomeCards=()=>{
     <>
     {cards.map((card) => {
           return <HomeCard 
-          title={card.title} id={card.id} userId={card.userId} completed={card.completed}
+          username={card.username} age={card.age} _id={card._id}  deleted={card.deleted}
           />;
         })}
     </>
