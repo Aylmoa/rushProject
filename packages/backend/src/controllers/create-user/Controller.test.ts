@@ -3,10 +3,11 @@ import { MongoMemoryServer } from 'mongodb-memory-server';
 import {getMockReq,getMockRes}from "@jest-mock/express";
 import {ControllerCreateUser} from "./Controller";
 
-describe("CreateUser Tests", async ()=>{
+describe("CreateUser Tests", ()=>{
     
-    let mongoServer=await MongoMemoryServer.create();   
-    beforeAll(async ()=>{        
+    let mongoServer; 
+     beforeAll(async ()=>{        
+        mongoServer=await MongoMemoryServer.create();  
        await mongoose.connect(mongoServer.getUri(),{dbName:"TestSuite"})
     });
     afterAll(async () =>{
