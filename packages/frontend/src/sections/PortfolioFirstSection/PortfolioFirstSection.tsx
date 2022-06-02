@@ -18,8 +18,8 @@ const PortfolioContainer=styled.div(()=>({
     paddingBottom: '24rem',
 }));
   
-const PorfolioItem=styled.div(()=>({
-    backgroundColor: '#c8c6c4',
+const PorfolioItem=styled.div((props)=>({
+    backgroundColor: props.theme.palette.themeDarkAlt,
     height: 300,
     width: 'auto',
     borderRadius: 3,
@@ -36,9 +36,9 @@ const PorfolioItemImage=styled.div<PortfolioItemImageProp>((props)=>({
   height: 300,
   width: '100%',
 }));
-const PorfolioItemImageOverlay=styled.div(()=>({
+const PorfolioItemImageOverlay=styled.div((props)=>({
     opacity: 0,
-    backgroundColor: '#202020',
+    backgroundColor:props.theme.palette.themePrimary,
     transition: '1s ease',
     position: 'inherit',
     height: 300,
@@ -46,9 +46,9 @@ const PorfolioItemImageOverlay=styled.div(()=>({
     display: 'flex',     
     "&:hover" :{ opacity: 0.9} 
 }));
-const PorfolioItemImageOverlayText=styled.div(()=>({
+const PorfolioItemImageOverlayText=styled.div((props)=>({
     textAlign: 'center',
-    color: '#fff',
+    color: props.theme.palette.black,
     margin: 'auto',
     fontFamily: "Raleway, sans-serif",
     fontSize: 24,

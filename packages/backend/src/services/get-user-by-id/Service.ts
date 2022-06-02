@@ -1,11 +1,11 @@
-import { User } from "../../models/Users";
+import { User,UserType } from "../../models/Users";
 
 export interface GetUserProps {
-  body: any;
+  body: UserType;
 }
 export async function getUserById(props: GetUserProps) {
-  const { body } = props;
+  const { _id } = props.body;
 
-  const result = await User.findById({ _id: body._id, deleted: false });
+  const result = await User.findById({ _id: _id, deleted: false });
   return result;
 }

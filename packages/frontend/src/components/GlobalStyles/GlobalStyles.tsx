@@ -8,7 +8,7 @@ export const GlobalStyles = (props:any) => {
       <Global
         styles={css`
           body{
-            background-color:${theme.colors.background} ;
+            background-color:${theme.palette.white} ;
             min-height: 100%;
           }
           *{

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { propsWithcustomTheme } from "../../types";
 
-const TitleText = styled.div((props:propsWithcustomTheme) => ({
+
+const TitleText = styled.div((props) => ({
   fontFamily: "Raleway, sans-serif",
   fontWeight: 900,
   fontSize: 60,
@@ -10,7 +10,7 @@ const TitleText = styled.div((props:propsWithcustomTheme) => ({
   textAlign: 'center',
   paddingTop: 36,
   paddingBottom: 36,
-  color: props.theme?.colors.themePrimary,
+  color: props.theme.palette.themePrimary,
   letterSpacing: 6,
   })); 
   

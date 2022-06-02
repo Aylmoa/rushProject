@@ -2,32 +2,32 @@ import React from "react";
 import { Global, css } from "@emotion/react";
 import styled from "@emotion/styled";
 import {Title} from "../../components/MainTitle";
-import { propsWithcustomTheme } from "../../types";
 
 
 
-const Contact=styled.div((props:propsWithcustomTheme)=>({
+
+const Contact=styled.div((props)=>({
     margin: 'auto',
     width: '60%',
     borderRadius: 4,
-    backgroundColor: props.theme?.colors.foregroundPrimary,
+    backgroundColor: props.theme.palette.neutralPrimary,
     fontSize: 18,
     boxShadow: '5px 5px 2px #202020',
     display: 'flex',
     fontFamily: 'Raleway, sans-serif',
 }));
   
-const ContactSideBar=styled.div(()=>({
-    backgroundColor: '#121212',
+const ContactSideBar=styled.div((props)=>({
+    backgroundColor: props.theme.palette.neutralTertiaryAlt,
   width: 420,
   display: 'flex',
   borderTopLeftRadius: 4,
   borderBottomLeftRadius: 4,
-  color: '#dade00',
+  color: props.theme.palette.themePrimary,
   flexFlow: 'column',
 }));
-const ContactSideBarInfo=styled.div(()=>({
-    color: '#fff',
+const ContactSideBarInfo=styled.div((props)=>({
+    color:  props.theme.palette.white,
   textAlign: 'center',
   margin: 'auto',
   width: 300,
@@ -49,8 +49,8 @@ const ContactForm=styled.form(()=>({
   margin: 'auto',
   width: '50%',
 }));
-const ContactFormInput=styled.input(()=>({
-  color: 'black',
+const ContactFormInput=styled.input((props)=>({
+  color: props.theme.palette.neutralDark,
   padding: 8,
   width: '100%',
   border: '1px solid #ccc',
@@ -59,17 +59,17 @@ const ContactFormInput=styled.input(()=>({
     fontWeight: 800,
   borderRadius: 10,
 }));
-const ContactFormLabel=styled.label((props:propsWithcustomTheme)=>({
-  color: props.theme?.colors.background,
+const ContactFormLabel=styled.label((props)=>({
+  color: props.theme.palette.black,
   fontSize: 16,
   fontWeight: 700,
   textAnchor: 'middle',  
   letterSpacing: 1,
 }));
-const ContactFormTextArea=styled.textarea(()=>({
+const ContactFormTextArea=styled.textarea((props)=>({
   height: 100,
   borderRadius: 10,
-  color: 'black',
+  color: props.theme.palette.white,
   padding: 8,
   width: '100%',
   border: '1px solid #ccc',
@@ -78,10 +78,10 @@ const ContactFormTextArea=styled.textarea(()=>({
     fontWeight: 800,
   
 }));
-const ContactFormButton=styled.button(()=>({
+const ContactFormButton=styled.button((props)=>({
   borderRadius: 10,
-  color: 'black',
-  backgroundColor: '#dade00',
+  color:  props.theme.palette.white,
+  backgroundColor:  props.theme.palette.themePrimary,
   boxShadow: '2px 2px 5px black',
   fontSize: 22,
   height: 30,

@@ -5,6 +5,8 @@ import { NavigaionBar } from "./components/NavigationBar";
 import { Footer } from "./components/Footer";
 import { Routes,Route,Link, BrowserRouter } from "react-router-dom";
 import { renderRoutes } from "./routes";
+import { LightTheme } from "./themes/LightTheme";
+import { DarkTheme } from "./themes/DarkTheme";
 import { jsx, ThemeProvider, useTheme } from '@emotion/react'
 
 /*const Square = styled.div((props) => ({
@@ -38,6 +40,8 @@ const Squares = (props: SquaresProps) => {
 };
           
 */
+/* 
+************Old Themes*****************
 const mainTheme={
   colors:{        
     themePrimary:"#dade00",
@@ -71,15 +75,15 @@ const clearTheme={
     cardBackgroundSecond:"#f3f2f1",    
   }
 }
-
+*/
 
 const MainContainer = styled.div(() => ({
   position: 'relative',
    minHeight: '100vh',
 }));
 export function App() {
-  const [isClearTheme,setIsClearTheme]=useState(false)
-  let currentTheme=isClearTheme? mainTheme:clearTheme;
+  const [isLightTheme,setIsLightTheme]=useState(false)
+  let currentTheme=isLightTheme? DarkTheme:LightTheme;
   return (
     <>
     <ThemeProvider theme={currentTheme}>
@@ -88,7 +92,7 @@ export function App() {
         <MainContainer>
         
         <BrowserRouter>
-        <NavigaionBar setClearTheme={()=>setIsClearTheme(!isClearTheme)} isClearTheme={isClearTheme}/>
+        <NavigaionBar setClearTheme={()=>setIsLightTheme(!isLightTheme)} isClearTheme={isLightTheme}/>
            <Routes>
               {renderRoutes()}
           </Routes> 

@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
 import KaraokeLogo from "./karaoke-logo.svg";
-import { customTheme, propsWithcustomTheme } from "../../types";
 
-const Foote = styled.div((props: propsWithcustomTheme) => ({
+
+const Foote = styled.div((props) => ({
   display: "flex",
   flexFlow: "row wrap",
   padding: " 30px 30px 20px 30px",
-  backgroundColor: props.theme?.colors.backgroundDark,
+  backgroundColor: props.theme.palette.neutralDark,
   bottom: "0",
   position: "absolute",
   width: "100%",
@@ -21,9 +21,9 @@ const FooterColumn = styled.div(() => ({
 interface FooterListTitleTheme{
   tema:string;
 }
-const FooterListTitle = styled.div((props: propsWithcustomTheme&FooterListTitleTheme) => ({
+const FooterListTitle = styled.div<FooterListTitleTheme>((props) => ({
   fontFamily: "Raleway, sans-serif",
-  color: props.theme?.colors.themeDark,
+  color: props.theme.palette.neutralLighter,
   textShadow:props.tema==="dark"? "2px 2px black":"1px 2px black",
   fontSize: "24px",
   paddingBottom: "10px",
@@ -32,9 +32,9 @@ const FooterList = styled.div(() => ({
   listStyle: "none",
   fontFamily: " Assistant, sans-serif",
 }));
-const FooterListItem = styled.div((props: propsWithcustomTheme) => ({
+const FooterListItem = styled.div((props) => ({
   textDecoration: "none",
-  color: props.theme?.colors.foregroundPrimary,
+  color: props.theme.palette.black,
 }));
 const FooteLogo = styled.div(() => ({
   width: 100,

@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
 import {Routes,Route, Link, BrowserRouter, useMatch, PathMatch} from "react-router-dom";
-import { customTheme, propsWithcustomTheme } from "../../types";
-
-
 
 const NavBar = styled.div(() => ({
   fontFamily: "Raleway, sans-serif",
@@ -19,10 +16,10 @@ interface NavAProp {
   isactive?: PathMatch<string> | null;
 }
 
-const NavBarLink = styled(Link) ((props:propsWithcustomTheme & NavAProp) => ({
+const NavBarLink = styled(Link)<NavAProp>((props) => ({
   margin: "auto",
   fontSize: "20px",
-  color: props.isactive === null ? props.theme?.colors.foregroundPrimary : props.theme?.colors.themePrimary,
+  color: props.isactive === null ? props.theme.palette.white : props.theme.palette.themePrimary,
   padding: "32px 48px 16px",
   textDecoration: "none",
   borderRadius: "30%",
@@ -32,10 +29,10 @@ const NavBarLink = styled(Link) ((props:propsWithcustomTheme & NavAProp) => ({
 interface NavBarChangeThemeProps{
   themee:string;
 }
-const NavBarChangeTheme = styled.button((props:propsWithcustomTheme&NavBarChangeThemeProps) => ({
+const NavBarChangeTheme = styled.button<NavBarChangeThemeProps>((props) => ({
     margin: "auto",
     fontSize: "20px",
-   color: props.themee == "Light Theme" ? props.theme?.colors.foregroundPrimary : props.theme?.colors.foregroundPrimary,
+   color: props.themee == "Light Theme" ? props.theme.palette.white : props.theme.palette.black,
    padding: "0px 24px 16px",
    textDecoration: "none",
    borderStyle:"none",
